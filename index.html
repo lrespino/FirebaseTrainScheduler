@@ -1,18 +1,78 @@
 <!DOCTYPE html>
+
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Firebase Train Scheduler</title>
+     <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+
+  <!-- Firebase References -->
+  <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-database.js"></script>
+
 </head>
+
 <body>
     <div class="container">
-        <div class="row">
-            <div class="col-sm-12"></div>
-            <div class="col-sm-12"></div>
-            <div class="col-sm-12"></div>
-        </div>
-    </div>
+        <!-- Jumbotron -->
+        <div class="jumbotron">
+                <h1 class="text-center">Train Scheduler</h1>
+            </div>
+    
+    
+        <div class="jumbotron">
+                <h1 class="text-center">Current Train Schedule</h1>
+              </div>
+              <div class="card-body">
+
+                    <!-- Add train Form (note the various input "types")-->
+                    <form role="form">
+                      <div class="form-group row">
+                        <label for="train-input">Train:</label>
+                        <input class="form-control" id="train-input" type="text">
+                      </div>
+                      <div class="form-group row">
+                        <label for="destination">destination:</label>
+                        <input class="form-control" id="destination-input" type="text">
+                      </div>
+                      <div class="form-group row">
+                        <label for="firstTrain-input">First Train Time:</label>
+                        <input class="form-control" id="firstTrain-input" type="datetime">
+                      </div>
+                      <div class="form-group row">
+                        <label for="frequency-input">Frequency (min)</label>
+                        <input class="form-control" id="frequency-input" type="number">
+                      </div>
+                      <button class="btn btn-default" id="add-train" type="submit">Submit</button>
+                    </form>
+        
+                  </div>
+                </div>
+              </div>           
+    
 </body>
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/6.1.0/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#config-web-app -->
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyC-3XU-e8HRsJP_Tm-O8v682Z3XeB7kIVM",
+    authDomain: "trainscheduler-b15f3.firebaseapp.com",
+    databaseURL: "https://trainscheduler-b15f3.firebaseio.com",
+    projectId: "trainscheduler-b15f3",
+    storageBucket: "trainscheduler-b15f3.appspot.com",
+    messagingSenderId: "735632129303",
+    appId: "1:735632129303:web:f4b6dab92f90cac2"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+</script>
 </html>
