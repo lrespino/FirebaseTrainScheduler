@@ -11,8 +11,8 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 
   <!-- Firebase References -->
-  <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-app.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-database.js"></script>
+  <!-- <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-database.js"></script> -->
 
 </head>
 
@@ -24,10 +24,17 @@
             </div>
     
     
-        <div class="jumbotron">
+        <div class="col-sm-12" id="train-output">
+            <div class="row" >
                 <h1 class="text-center">Current Train Schedule</h1>
-              </div>
-              <div class="card-body">
+                <div class="col-sm-2">Train Name</div>
+                <div class="col-sm-2">Destinatio</div>
+                <div class="col-sm-2">Frequency</div>
+                <div class="col-sm-2">Next Arrival</div>
+                <div class="col-sm-2">MInutes Away</div>
+            </div>
+            
+        <div class="card-body">
 
                     <!-- Add train Form (note the various input "types")-->
                     <form role="form">
@@ -56,12 +63,12 @@
     
 </body>
 <!-- The core Firebase JS SDK is always required and must be listed first -->
-<script src="https://www.gstatic.com/firebasejs/6.1.0/firebase-app.js"></script>
+<!-- <script src="https://www.gstatic.com/firebasejs/6.1.0/firebase-app.js"></script> -->
 
 <!-- TODO: Add SDKs for Firebase products that you want to use
      https://firebase.google.com/docs/web/setup#config-web-app -->
 
-<script>
+<!-- <script>
   // Your web app's Firebase configuration
   var firebaseConfig = {
     apiKey: "AIzaSyC-3XU-e8HRsJP_Tm-O8v682Z3XeB7kIVM",
@@ -71,8 +78,20 @@
     storageBucket: "trainscheduler-b15f3.appspot.com",
     messagingSenderId: "735632129303",
     appId: "1:735632129303:web:f4b6dab92f90cac2"
-  };
-  // Initialize Firebase
-  firebase.initializeApp(firebaseConfig);
-</script>
+  }; -->
+  <!-- // Initialize Firebase
+  firebase.initializeApp(firebaseConfig); -->
+<!-- </script> -->
+ <!-- Script -->
+ <script  src="https://code.jquery.com/jquery-3.4.1.js"
+ integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+ crossorigin="anonymous"></script>
+
+ <script  src="https://www.gstatic.com/firebasejs/6.1.0/firebase-app.js"></script>
+ <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-app.js"></script>
+ <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-database.js"></script>
+
+ <script src="logic.js"></script>
+
+
 </html>
