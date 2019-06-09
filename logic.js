@@ -24,42 +24,6 @@ var firstTrain = 0;
 var frequency = 0;
 
 
-function nextTrainInfo(firstTrain, frequency) {
-  var trainInfo = [];
-
-  // First Time (pushed back 1 year to make sure it comes before current time)
-  var firstTimeConverted = moment(firstTrain, "HH:mm").subtract(1, "years");
-  console.log(firstTimeConverted);
-
-  // Current Time
-  var currentTime = moment();
-  console.log("CURRENT TIME: " + moment(currentTime).format("hh:mm"));
-
-  // Difference between the times
-  var diffTime = moment().diff(moment(firstTimeConverted), "minutes");
-  console.log("DIFFERENCE IN TIME: " + diffTime);
-
-  // Time apart (remainder)
-  var tRemainder = diffTime % frequency;
-  console.log(tRemainder);
-
-  // Minute Until Train
-  var tMinutesTillTrain = frequency - tRemainder;
-  console.log("MINUTES TILL TRAIN: " + tMinutesTillTrain);
-  trainInfo.push(tMinutesTillTrain);
-
-  // Next Train
-  var nextTrain = moment().add(tMinutesTillTrain, "minutes");
-  console.log("ARRIVAL TIME: " + moment(nextTrain).format("hh:mm"));
-
-  var arrivalTime = moment(nextTrain).format("hh:mm");
-
-  trainInfo.push(arrivalTime);
-
-  return trainInfo;
-
-}
-
 // Capture Button Click
 $("#add-train").on("click", function(event) {
   event.preventDefault();
@@ -118,3 +82,39 @@ dataRef.ref().orderByChild("dateAdded").limitToLast(1).on("child_added", functio
   $("#train-firstTrain").text(snapshot.val().firstTrain);
   $("#train-frequency").text(snapshot.val().dateAdded);
 });
+
+// function nextTrainInfo(firstTrain, frequency) {
+//   var trainInfo = [];
+
+//   // First Time (pushed back 1 year to make sure it comes before current time)
+//   var firstTimeConverted = moment(firstTrain, "HH:mm").subtract(1, "years");
+//   console.log(firstTimeConverted);
+
+//   // Current Time
+//   var currentTime = moment();
+//   console.log("CURRENT TIME: " + moment(currentTime).format("hh:mm"));
+
+//   // Difference between the times
+//   var diffTime = moment().diff(moment(firstTimeConverted), "minutes");
+//   console.log("DIFFERENCE IN TIME: " + diffTime);
+
+//   // Time apart (remainder)
+//   var tRemainder = diffTime % frequency;
+//   console.log(tRemainder);
+
+//   // Minute Until Train
+//   var tMinutesTillTrain = frequency - tRemainder;
+//   console.log("MINUTES TILL TRAIN: " + tMinutesTillTrain);
+//   trainInfo.push(tMinutesTillTrain);
+
+//   // Next Train
+//   var nextTrain = moment().add(tMinutesTillTrain, "minutes");
+//   console.log("ARRIVAL TIME: " + moment(nextTrain).format("hh:mm"));
+
+//   var arrivalTime = moment(nextTrain).format("hh:mm");
+
+//   trainInfo.push(arrivalTime);
+
+//   return trainInfo;
+
+// }
